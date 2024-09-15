@@ -1,6 +1,6 @@
 package es.pildoras.pruebaAnnotations;
 
-import org.springframework.context.support.ClassPathXmlApplicationContext;
+import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 
 public class UsoAnnotations {
 
@@ -9,8 +9,11 @@ public class UsoAnnotations {
 
 		
 		//leer el xml de configuracion
-		ClassPathXmlApplicationContext contexto = new ClassPathXmlApplicationContext("applicationContext.xml");
+		//ClassPathXmlApplicationContext contexto = new ClassPathXmlApplicationContext("applicationContext.xml");
 
+		//leer el class de configuracion
+		
+		AnnotationConfigApplicationContext contexto = new AnnotationConfigApplicationContext(EmpleadosConfig.class);
 		
 		//Pedir un bean al conetenedor
 		
