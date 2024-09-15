@@ -2,9 +2,11 @@ package es.pildoras.pruebaAnnotations;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
+import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Component;
 
 @Component
+@Scope("prototype")//para scope singleton no hace falta anotacion ya que por drfecto es singleton
 public class ComercialExperimentado implements Empleados {
 	public ComercialExperimentado() {
 		
@@ -33,7 +35,7 @@ public class ComercialExperimentado implements Empleados {
 		return nuevoInforme.getInformeFinanciero();
 	}
 	@Autowired
-	@Qualifier("informeFinancieroTrim4")
+	@Qualifier("informeFinancieroTrim3")
 	private CreacionInformeFinanciero nuevoInforme;
 	
 
