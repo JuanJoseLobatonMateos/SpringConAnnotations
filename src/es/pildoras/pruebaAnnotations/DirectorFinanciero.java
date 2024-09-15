@@ -1,5 +1,7 @@
 package es.pildoras.pruebaAnnotations;
 
+import org.springframework.beans.factory.annotation.Value;
+
 public class DirectorFinanciero implements Empleados {
 
 	@Override
@@ -19,6 +21,24 @@ public class DirectorFinanciero implements Empleados {
 		this.informeFinanciero = informeFinanciero;
 	}
 
+	public String getEmail() {
+		return email;
+	}
+
+	public String getNombreEmpresa() {
+		return nombreEmpresa;
+	}
+
+	public int getTelefono() {
+		return telefono;
+	}
+
 	private CreacionInformeFinanciero informeFinanciero;
+	@Value("${email}")
+	private String email;
+	@Value("${nombreEmpresa}")
+	private String nombreEmpresa;
+	@Value("${telefono}")
+	private int telefono;
 
 }
